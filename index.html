@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Reinaldo Matheus | Desarrollador de sistemas web, SaaS y automatización con IA</title>
   <meta name="description" content="Ingeniero en Informática con más de 15 años construyendo sistemas en PHP y MySQL: operación web de un WMS empresarial, plataformas SaaS multi-tenant y automatizaciones con IA. Disponible para empleo remoto o por contrato.">
   <meta name="author" content="Reinaldo Matheus">
@@ -11,18 +11,22 @@
   <meta name="theme-color" content="#F4F6F8" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0E1318" media="(prefers-color-scheme: dark)">
 
-  <!-- Open Graph -->
+  <!-- Vista previa al compartir (WhatsApp, LinkedIn, bolsas de empleo) -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_VE">
   <meta property="og:site_name" content="Reinaldo Matheus">
-  <meta property="og:title" content="Reinaldo Matheus | Desarrollador de sistemas web, SaaS y automatización con IA">
-  <meta property="og:description" content="Más de 15 años construyendo sistemas en PHP y MySQL: WMS empresarial, SaaS multi-tenant y automatizaciones con IA. Disponible para trabajo remoto o por contrato.">
   <meta property="og:url" content="https://reinalddo.github.io/">
-  <meta property="og:image" content="https://reinalddo.github.io/img/og-portafolio.png">
+  <meta property="og:title" content="Reinaldo Matheus | Desarrollador de sistemas web, SaaS y automatización con IA">
+  <meta property="og:description" content="Ingeniero en Informática con más de 15 años en PHP y MySQL: WMS empresarial, SaaS multi-tenant y automatizaciones con IA. Disponible para empleo remoto o por contrato.">
+  <meta property="og:image" content="https://reinalddo.github.io/og-image.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Reinaldo Matheus, desarrollador de sistemas web, SaaS y automatización con IA">
+  <meta property="og:image:alt" content="Reinaldo Matheus, Ingeniero en Informática. Desarrollador de sistemas web, SaaS y automatización con IA">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Reinaldo Matheus | Desarrollador de sistemas web, SaaS y automatización con IA">
+  <meta name="twitter:description" content="Ingeniero en Informática con más de 15 años en PHP y MySQL: WMS empresarial, SaaS multi-tenant y automatizaciones con IA.">
+  <meta name="twitter:image" content="https://reinalddo.github.io/og-image.png">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
@@ -36,8 +40,10 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Reinaldo Matheus",
-    "jobTitle": "Desarrollador de sistemas web, SaaS y automatización con IA",
+    "jobTitle": ["Ingeniero en Informática", "Desarrollador de sistemas web, SaaS y automatización con IA"],
+    "description": "Ingeniero en Informática con más de 15 años construyendo sistemas en PHP y MySQL.",
     "url": "https://reinalddo.github.io/",
+    "image": "https://reinalddo.github.io/og-image.png",
     "email": "mailto:reinalddo@gmail.com",
     "address": { "@type": "PostalAddress", "addressLocality": "San Cristóbal", "addressCountry": "VE" },
     "alumniOf": "Universidad Nacional Experimental del Táchira (UNET)",
@@ -117,29 +123,71 @@
 
     <!-- ============ PROYECTOS ============ -->
     <section class="section wrap" id="proyectos" aria-labelledby="t-proyectos">
-      <header class="section__head">
+      <header class="section__head" data-reveal>
         <h2 id="t-proyectos">Proyectos destacados</h2>
         <p>Cinco sistemas en los que trabajé de punta a punta: qué problema resolvían y qué parte construí yo.</p>
       </header>
 
-      <!-- Proyecto 1 -->
-      <article class="project">
+      <!-- Proyecto 01 · AssistPro (destacado) -->
+      <article class="project project--featured" data-reveal>
         <header class="project__head">
-          <p class="project__meta">Adventech Logística (México) · 2019–2025 · Desarrollador web del equipo de AssistPro</p>
-          <h3 class="project__title">AssistPro WMS <span>Operación logística web</span></h3>
+          <span class="project__num" aria-hidden="true">01</span>
+          <div>
+            <p class="project__meta">Adventech Logística (México) · 2019–2025 · Desarrollador web del equipo de AssistPro</p>
+            <h3 class="project__title">AssistPro WMS <span>Operación logística web</span></h3>
+          </div>
         </header>
-        <div class="project__body">
-          <dl class="project__facts">
-            <div><dt>Reto</dt><dd>Que los almacenes de los clientes controlaran todo el flujo físico de la mercancía desde la web, sincronizado con las terminales móviles de operación.</dd></div>
-            <div><dt>Qué hice</dt><dd>Desarrollé la parte web de todo el flujo logístico: entrada y recepción, ubicación y acomodo, traslados, pedidos, embarques, salidas y envíos. Trabajé en coordinación con el desarrollador Android para que web y terminales operaran sobre los mismos datos.</dd></div>
-            <div><dt>Resultado</dt><dd>Sistema en producción usado por varios clientes de la empresa durante 7 años.</dd></div>
-          </dl>
-          <!-- Captura opcional: guarda la imagen como img/assistpro-wms.webp y aparecerá sola -->
-          <figure class="media" data-media>
-            <div class="media__bar"><span class="media__url" data-media-url>adventech-logistica.com</span></div>
-            <img src="img/assistpro-wms.webp" alt="Pantalla de AssistPro WMS" width="1280" height="956" loading="lazy" decoding="async" data-media-img>
-          </figure>
-        </div>
+
+        <figure class="flowmap" aria-labelledby="flowmap-cap">
+          <div class="flowmap__track">
+            <ol class="flowmap__stations">
+              <li>
+                <span class="flowmap__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v9m0 0-3.5-3.5M12 12l3.5-3.5"/><path d="M4 13v6a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-6"/><path d="M4 13h4l1.5 2h5L16 13h4"/></svg></span>
+                <span class="flowmap__label">Entrada / Recepción</span>
+              </li>
+              <li>
+                <span class="flowmap__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 9h16M4 15h16M12 3v18"/></svg></span>
+                <span class="flowmap__label">Ubicación / Acomodo</span>
+              </li>
+              <li>
+                <span class="flowmap__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h14l-3.5-3.5M20 16H6l3.5 3.5"/></svg></span>
+                <span class="flowmap__label">Traslados</span>
+              </li>
+              <li>
+                <span class="flowmap__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="1.5"/><path d="M9 4V2.8h6V4M9 10h6M9 14h6M9 18h3"/></svg></span>
+                <span class="flowmap__label">Pedidos</span>
+              </li>
+              <li>
+                <span class="flowmap__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.5h18"/><rect x="4" y="12" width="7" height="7"/><rect x="13" y="12" width="7" height="7"/><rect x="8.5" y="4" width="7" height="7"/></svg></span>
+                <span class="flowmap__label">Embarques</span>
+              </li>
+              <li>
+                <span class="flowmap__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 6h11v10h-11zM13.5 9h4l3.5 3.8V16h-7.5"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></span>
+                <span class="flowmap__label">Salidas / Envíos</span>
+              </li>
+            </ol>
+            <span class="flowmap__pallet" aria-hidden="true"></span>
+          </div>
+          <figcaption class="flowmap__base" id="flowmap-cap">
+            <span class="flowmap__chip">Web</span>
+            <span class="flowmap__link" aria-hidden="true"></span>
+            <span class="flowmap__chip flowmap__chip--data">Mismos datos · MySQL</span>
+            <span class="flowmap__link" aria-hidden="true"></span>
+            <span class="flowmap__chip">Terminales móviles</span>
+          </figcaption>
+        </figure>
+
+        <dl class="project__facts project__facts--cols">
+          <div><dt>Reto</dt><dd>Que los almacenes de los clientes controlaran todo el flujo físico de la mercancía desde la web, sincronizado con las terminales móviles de operación.</dd></div>
+          <div><dt>Qué hice</dt><dd>Desarrollé la parte web de todo el flujo logístico: entrada y recepción, ubicación y acomodo, traslados, pedidos, embarques, salidas y envíos. Trabajé en coordinación con el desarrollador Android para que web y terminales operaran sobre los mismos datos.</dd></div>
+          <div><dt>Resultado</dt><dd>Sistema en producción usado por varios clientes de la empresa durante 7 años.</dd></div>
+        </dl>
+
+        <!-- Capturas de AssistPro: guárdalas en img/assistpro/ y agrega una línea por imagen dentro del div, por ejemplo:
+             <a class="gallery__item" href="img/assistpro/recepcion.webp"><img src="img/assistpro/recepcion.webp" alt="AssistPro WMS: pantalla de recepción de mercancía" loading="lazy" decoding="async"></a>
+             Si el div queda vacío, la tarjeta se ve completa sin galería. -->
+        <div class="gallery gallery--wide" data-gallery></div>
+
         <footer class="project__foot">
           <ul class="stack" aria-label="Stack">
             <li>PHP</li><li>Slim Framework</li><li>MySQL</li>
@@ -150,11 +198,14 @@
         </footer>
       </article>
 
-      <!-- Proyecto 2 -->
-      <article class="project">
+      <!-- Proyecto 02 · Recargas -->
+      <article class="project" data-reveal>
         <header class="project__head">
-          <p class="project__meta"><span class="live"><span class="dot" aria-hidden="true"></span>En producción</span> 3 tiendas: reborxstore.com, danisagamerstore.com y mocorecargas.com</p>
-          <h3 class="project__title">Plataformas de recarga de videojuegos</h3>
+          <span class="project__num" aria-hidden="true">02</span>
+          <div>
+            <p class="project__meta"><span class="live"><span class="dot" aria-hidden="true"></span>En producción</span> 3 tiendas: reborxstore.com, danisagamerstore.com</p>
+            <h3 class="project__title">Plataformas de recarga de videojuegos</h3>
+          </div>
         </header>
         <div class="project__body">
           <dl class="project__facts">
@@ -170,14 +221,11 @@
             </dd></div>
             <div><dt>Resultado</dt><dd>Tres tiendas operando, con mantenimiento y nuevas funciones de forma continua.</dd></div>
           </dl>
-          <figure class="media" data-media>
-            <div class="media__bar"><span class="media__url" data-media-url>reborxstore.com</span></div>
-            <img src="img/reborxstore.webp" alt="Página de inicio de reborxstore.com" width="1280" height="800" loading="lazy" decoding="async" data-media-img>
-            <div class="media__tabs" aria-label="Elegir tienda">
-              <button type="button" aria-pressed="true" data-src="img/reborxstore.webp" data-url="reborxstore.com" data-alt="Página de inicio de reborxstore.com" data-w="1280" data-h="800">reborXstore</button>
-              <button type="button" aria-pressed="false" data-src="img/danisagamerstore.webp" data-url="danisagamerstore.com" data-alt="Página de inicio de danisagamerstore.com" data-w="1280" data-h="800">DanisA Gamer Store</button>
-            </div>
-          </figure>
+          <!-- Capturas en img/recargas/ -->
+          <div class="gallery" data-gallery>
+            <a class="gallery__item" href="img/recargas/reborxstore.webp"><img src="img/recargas/reborxstore.webp" alt="reborxstore.com: página de inicio con buscador de juegos, accesos por juego y banner de promociones" width="1280" height="800" loading="lazy" decoding="async"></a>
+            <a class="gallery__item" href="img/recargas/danisagamerstore.webp"><img src="img/recargas/danisagamerstore.webp" alt="danisagamerstore.com: página de inicio con carrusel de promociones y últimas novedades de recargas" width="1280" height="800" loading="lazy" decoding="async"></a>
+          </div>
         </div>
         <footer class="project__foot">
           <ul class="stack" aria-label="Stack">
@@ -186,33 +234,32 @@
           <div class="project__links">
             <a class="link-arrow" href="https://reborxstore.com" target="_blank" rel="noopener">reborxstore.com</a>
             <a class="link-arrow" href="https://danisagamerstore.com" target="_blank" rel="noopener">danisagamerstore.com</a>
-            <a class="link-arrow" href="https://mocorecargas.com" target="_blank" rel="noopener">mocorecargas.com</a>
           </div>
         </footer>
       </article>
 
-      <!-- Proyecto 3 -->
-      <article class="project">
+      <!-- Proyecto 03 · CobroAlDía -->
+      <article class="project" data-reveal>
         <header class="project__head">
-          <p class="project__meta"><span class="live"><span class="dot" aria-hidden="true"></span>En producción</span> SaaS de recordatorios de pago</p>
-          <h3 class="project__title">CobroAlDía</h3>
+          <span class="project__num" aria-hidden="true">03</span>
+          <div>
+            <p class="project__meta"><span class="live"><span class="dot" aria-hidden="true"></span>En producción</span> SaaS de recordatorios de pago</p>
+            <h3 class="project__title">CobroAlDía</h3>
+          </div>
         </header>
         <div class="project__body">
           <dl class="project__facts">
             <div><dt>Reto</dt><dd>Que los negocios cobren a tiempo sin perseguir a cada cliente manualmente.</dd></div>
             <div><dt>Qué hice</dt><dd>Plataforma multi-tenant que envía recordatorios de pago automáticos por WhatsApp según el calendario de cada cliente.</dd></div>
           </dl>
-          <figure class="media" data-media>
-            <div class="media__bar"><span class="media__url" data-media-url>cobroaldia.com · Resumen</span></div>
-            <img src="img/cobroaldia-resumen.webp" alt="CobroAlDía, pantalla Resumen" width="1280" height="611" loading="lazy" decoding="async" data-media-img>
-            <div class="media__tabs" aria-label="Elegir pantalla">
-              <button type="button" aria-pressed="true" data-src="img/cobroaldia-resumen.webp" data-url="cobroaldia.com · Resumen" data-alt="CobroAlDía, pantalla Resumen" data-w="1280" data-h="611">Resumen</button>
-              <button type="button" aria-pressed="false" data-src="img/cobroaldia-mis-clientes.webp" data-url="cobroaldia.com · Mis clientes" data-alt="CobroAlDía, pantalla Mis clientes" data-w="1280" data-h="611">Mis clientes</button>
-              <button type="button" aria-pressed="false" data-src="img/cobroaldia-cobros.webp" data-url="cobroaldia.com · Cobros" data-alt="CobroAlDía, pantalla Cobros" data-w="1280" data-h="611">Cobros</button>
-              <button type="button" aria-pressed="false" data-src="img/cobroaldia-recordatorios.webp" data-url="cobroaldia.com · Recordatorios" data-alt="CobroAlDía, pantalla Recordatorios" data-w="1280" data-h="611">Recordatorios</button>
-              <button type="button" aria-pressed="false" data-src="img/cobroaldia-mis-monedas.webp" data-url="cobroaldia.com · Mis monedas" data-alt="CobroAlDía, pantalla Mis monedas" data-w="1280" data-h="611">Mis monedas</button>
-            </div>
-          </figure>
+          <!-- Capturas en img/cobroaldia/ -->
+          <div class="gallery" data-gallery>
+            <a class="gallery__item" href="img/cobroaldia/resumen.webp"><img src="img/cobroaldia/resumen.webp" alt="CobroAlDía, pantalla Resumen: montos por cobrar, vencidos y cobrados en el mes, recordatorios y clientes activos" width="1280" height="611" loading="lazy" decoding="async"></a>
+            <a class="gallery__item" href="img/cobroaldia/mis-clientes.webp"><img src="img/cobroaldia/mis-clientes.webp" alt="CobroAlDía, pantalla Mis clientes: lista de clientes con teléfono, saldo pendiente y estado" width="1280" height="611" loading="lazy" decoding="async"></a>
+            <a class="gallery__item" href="img/cobroaldia/cobros.webp"><img src="img/cobroaldia/cobros.webp" alt="CobroAlDía, pantalla Cobros: cobros pendientes con fecha de vencimiento, monto y estado" width="1280" height="611" loading="lazy" decoding="async"></a>
+            <a class="gallery__item" href="img/cobroaldia/recordatorios.webp"><img src="img/cobroaldia/recordatorios.webp" alt="CobroAlDía, pantalla Recordatorios: envíos por WhatsApp programados para hoy e historial de mensajes enviados" width="1280" height="611" loading="lazy" decoding="async"></a>
+            <a class="gallery__item" href="img/cobroaldia/mis-monedas.webp"><img src="img/cobroaldia/mis-monedas.webp" alt="CobroAlDía, pantalla Mis monedas: formulario para agregar monedas y su tasa frente al dólar" width="1280" height="611" loading="lazy" decoding="async"></a>
+          </div>
         </div>
         <footer class="project__foot">
           <ul class="stack" aria-label="Stack">
@@ -224,21 +271,24 @@
         </footer>
       </article>
 
-      <!-- Proyecto 4 -->
-      <article class="project">
+      <!-- Proyecto 04 · TVirtualShop -->
+      <article class="project" data-reveal>
         <header class="project__head">
-          <p class="project__meta"><span class="live"><span class="dot" aria-hidden="true"></span>En producción</span> E-commerce multi-tenant</p>
-          <h3 class="project__title">TVirtualShop</h3>
+          <span class="project__num" aria-hidden="true">04</span>
+          <div>
+            <p class="project__meta"><span class="live"><span class="dot" aria-hidden="true"></span>En producción</span> E-commerce multi-tenant</p>
+            <h3 class="project__title">TVirtualShop</h3>
+          </div>
         </header>
         <div class="project__body">
           <dl class="project__facts">
             <div><dt>Reto</dt><dd>Entregar tiendas virtuales completas en poco tiempo sin duplicar código por cliente.</dd></div>
             <div><dt>Qué hice</dt><dd>Arquitectura multi-tenant donde cada tienda tiene su propia base de datos y carpeta de tenant; dar de alta un cliente nuevo es crear su base de datos y su carpeta, sobre el mismo núcleo.</dd></div>
           </dl>
-          <figure class="media" data-media>
-            <div class="media__bar"><span class="media__url" data-media-url>tvirtualshop.com</span></div>
-            <img src="img/tvirtualshop.webp" alt="Página de inicio de tvirtualshop.com" width="1280" height="800" loading="lazy" decoding="async" data-media-img>
-          </figure>
+          <!-- Capturas en img/tvirtualshop/ -->
+          <div class="gallery" data-gallery>
+            <a class="gallery__item" href="img/tvirtualshop/inicio.webp"><img src="img/tvirtualshop/inicio.webp" alt="tvirtualshop.com: página de inicio de la tienda virtual con catálogo por rubros" width="1280" height="800" loading="lazy" decoding="async"></a>
+          </div>
         </div>
         <footer class="project__foot">
           <ul class="stack" aria-label="Stack">
@@ -250,39 +300,65 @@
         </footer>
       </article>
 
-      <!-- Proyecto 5 -->
-      <article class="project">
+      <!-- Proyecto 05 · n8n -->
+      <article class="project" data-reveal>
         <header class="project__head">
-          <p class="project__meta">Flujos de trabajo completos con n8n</p>
-          <h3 class="project__title">Automatización con n8n e inteligencia artificial</h3>
+          <span class="project__num" aria-hidden="true">05</span>
+          <div>
+            <p class="project__meta">Flujos de trabajo completos con n8n</p>
+            <h3 class="project__title">Automatización con n8n e inteligencia artificial</h3>
+          </div>
         </header>
-        <div class="project__body">
-          <dl class="project__facts">
-            <div><dt>Reto</dt><dd>Automatizar procesos completos de captación y atención, no solo tareas sueltas.</dd></div>
-            <div><dt>Qué hice</dt><dd>
-              <div class="sub">
-                <p class="sub__title">Pipeline de prospección</p>
-                <ol class="flow">
-                  <li>Busca negocios en Google Maps por API.</li>
-                  <li>Filtra los que tienen web y teléfono.</li>
-                  <li>Descarga el sitio.</li>
-                  <li>Una IA lo audita y redacta un mensaje personalizado.</li>
-                  <li>Lo guarda en PostgreSQL.</li>
-                  <li>Lo envía por WhatsApp con control de ritmo.</li>
-                </ol>
-              </div>
-              <div class="sub">
-                <p class="sub__title">Recepcionista virtual</p>
-                <p>Para un consultorio médico, con n8n y GPT-4o.</p>
-              </div>
-            </dd></div>
-          </dl>
-          <!-- Captura opcional: guarda la imagen como img/n8n-prospeccion.webp y aparecerá sola -->
-          <figure class="media" data-media>
-            <div class="media__bar"><span class="media__url" data-media-url>n8n · Pipeline de prospección</span></div>
-            <img src="img/n8n-prospeccion.webp" alt="Flujo de prospección en n8n" width="1280" height="956" loading="lazy" decoding="async" data-media-img>
-          </figure>
-        </div>
+        <dl class="project__facts">
+          <div><dt>Reto</dt><dd>Automatizar procesos completos de captación y atención, no solo tareas sueltas.</dd></div>
+          <div class="is-wide"><dt>Qué hice</dt><dd>
+            <div class="sub">
+              <p class="sub__title">Pipeline de prospección</p>
+              <ol class="pipeline">
+                <li>
+                  <span class="pipeline__node"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11Z"/><circle cx="12" cy="10" r="2.2"/></svg></span>
+                  <span class="pipeline__tool">Google Maps API</span>
+                  <span class="pipeline__text">Busca negocios en Google Maps por API.</span>
+                </li>
+                <li>
+                  <span class="pipeline__node"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6 7.5V19l-4 1.5v-8Z"/></svg></span>
+                  <span class="pipeline__tool">Filtro</span>
+                  <span class="pipeline__text">Filtra los que tienen web y teléfono.</span>
+                </li>
+                <li>
+                  <span class="pipeline__node"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.6 3.4 5.4 3.4 8.5s-1 5.9-3.4 8.5c-2.4-2.6-3.4-5.4-3.4-8.5s1-5.9 3.4-8.5Z"/></svg></span>
+                  <span class="pipeline__tool">HTTP</span>
+                  <span class="pipeline__text">Descarga el sitio.</span>
+                </li>
+                <li class="is-ai">
+                  <span class="pipeline__node"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3.5l1.9 5.1 5.1 1.9-5.1 1.9L11 17.5l-1.9-5.1L4 10.5l5.1-1.9Z"/><path d="M18.5 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8Z"/></svg></span>
+                  <span class="pipeline__tool">OpenAI / OpenRouter</span>
+                  <span class="pipeline__text">Una IA lo audita y redacta un mensaje personalizado.</span>
+                </li>
+                <li>
+                  <span class="pipeline__node"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="2.8"/><path d="M5 6v12c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8V6M5 12c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8"/></svg></span>
+                  <span class="pipeline__tool">PostgreSQL</span>
+                  <span class="pipeline__text">Lo guarda en PostgreSQL.</span>
+                </li>
+                <li>
+                  <span class="pipeline__node"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.3A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M12 8v3.8l2.4 1.6"/></svg></span>
+                  <span class="pipeline__tool">Evolution API</span>
+                  <span class="pipeline__text">Lo envía por WhatsApp con control de ritmo.</span>
+                </li>
+              </ol>
+            </div>
+            <div class="sub">
+              <p class="sub__title">Recepcionista virtual</p>
+              <p>Para un consultorio médico, con n8n y GPT-4o.</p>
+            </div>
+          </dd></div>
+        </dl>
+
+        <!-- Capturas de n8n: guárdalas en img/n8n/ y agrega una línea por imagen dentro del div, por ejemplo:
+             <a class="gallery__item" href="img/n8n/pipeline.webp"><img src="img/n8n/pipeline.webp" alt="n8n: flujo de prospección con Google Maps, IA y WhatsApp" loading="lazy" decoding="async"></a>
+             Si el div queda vacío, la tarjeta se ve completa sin galería. -->
+        <div class="gallery gallery--wide" data-gallery></div>
+
         <footer class="project__foot">
           <ul class="stack" aria-label="Stack">
             <li>n8n</li><li>Docker/Easypanel en VPS Linux</li><li>PostgreSQL</li><li>OpenAI/OpenRouter</li><li>Evolution API</li>
@@ -291,7 +367,7 @@
       </article>
 
       <!-- Otros proyectos -->
-      <div class="others" aria-labelledby="t-otros">
+      <div class="others" aria-labelledby="t-otros" data-reveal>
         <h3 class="others__title" id="t-otros">Otros proyectos</h3>
         <ul class="others__grid">
           <li>
@@ -331,10 +407,10 @@
     <!-- ============ CÓMO TRABAJO ============ -->
     <section class="section section--band" id="como-trabajo" aria-labelledby="t-trabajo">
       <div class="wrap">
-        <header class="section__head">
+        <header class="section__head" data-reveal>
           <h2 id="t-trabajo">Cómo trabajo</h2>
         </header>
-        <div class="principles">
+        <div class="principles" data-reveal>
           <div class="principle">
             <h3>Arquitectura primero</h3>
             <p>Diseño la base de datos y la estructura antes de escribir código.</p>
@@ -353,10 +429,10 @@
 
     <!-- ============ HABILIDADES ============ -->
     <section class="section wrap" id="habilidades" aria-labelledby="t-habilidades">
-      <header class="section__head">
+      <header class="section__head" data-reveal>
         <h2 id="t-habilidades">Habilidades</h2>
       </header>
-      <div class="skills">
+      <div class="skills" data-reveal>
         <div class="skills__group">
           <h3>Backend</h3>
           <ul class="tags"><li>PHP</li><li>Slim Framework</li><li>APIs REST</li><li>Integraciones con APIs de terceros</li></ul>
@@ -387,11 +463,11 @@
     <!-- ============ CONTACTO ============ -->
     <section class="section section--contact" id="contacto" aria-labelledby="t-contacto">
       <div class="wrap">
-        <header class="section__head">
+        <header class="section__head" data-reveal>
           <h2 id="t-contacto">Contacto</h2>
           <p>La forma más rápida de hablar conmigo es WhatsApp. También respondo por correo y LinkedIn.</p>
         </header>
-        <ul class="contact">
+        <ul class="contact" data-reveal>
           <li>
             <span class="contact__label">WhatsApp</span>
             <a class="contact__value" href="https://wa.me/584140779258" target="_blank" rel="noopener">+58 414-0779258</a>
@@ -418,6 +494,26 @@
       <p>© 2026 Reinaldo Matheus · Ingeniero en Informática (UNET)</p>
     </div>
   </footer>
+
+  <!-- Lightbox de capturas -->
+  <dialog class="lightbox" aria-label="Capturas ampliadas" data-lightbox>
+    <div class="lightbox__stage" data-lb-stage>
+      <img class="lightbox__img" alt="" data-lb-img>
+    </div>
+    <div class="lightbox__bar">
+      <p class="lightbox__caption" data-lb-caption></p>
+      <p class="lightbox__counter" aria-live="polite" data-lb-counter></p>
+    </div>
+    <button class="lightbox__btn lightbox__close" type="button" aria-label="Cerrar" data-lb-close>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <button class="lightbox__btn lightbox__prev" type="button" aria-label="Captura anterior" data-lb-prev>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <button class="lightbox__btn lightbox__next" type="button" aria-label="Captura siguiente" data-lb-next>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </dialog>
 
   <script src="script.js" defer></script>
 </body>
