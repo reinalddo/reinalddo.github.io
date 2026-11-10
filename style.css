@@ -261,6 +261,13 @@ ul, ol { padding: 0; }
 }
 .btn:active { transform: translateY(1px); }
 .btn__icon { width: 20px; height: 20px; flex: none; }
+.btn__icon--line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 .btn--primary { background: var(--ink); color: var(--paper); }
 .btn--primary:hover { background: color-mix(in srgb, var(--ink) 86%, var(--paper)); }
@@ -373,14 +380,28 @@ ul, ol { padding: 0; }
   align-items: center;
   border-bottom: 2px solid var(--ink);
 }
-.ficha__code {
-  padding: 14px 22px 8px;
-  font-size: clamp(3.4rem, 6.4vw, 5.4rem);
-  font-weight: 800;
-  font-stretch: 125%;
-  line-height: 1;
-  letter-spacing: -0.03em;
+/* Foto tipo credencial, en la celda que antes ocupaba "RM" */
+.ficha__photo {
+  display: block;
+  padding: 14px;
   border-right: 2px solid var(--ink);
+}
+.ficha__photo picture {
+  display: block;
+  width: clamp(92px, 9vw, 118px);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1.5px solid var(--ink);
+  border-radius: 6px;
+  background: var(--paper);
+}
+/* encuadre de credencial: cabeza y hombros */
+.ficha__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.6);
+  transform-origin: 50% 20%;
 }
 .ficha__title {
   padding: 14px 20px;
@@ -1320,8 +1341,16 @@ ul, ol { padding: 0; }
   text-underline-offset: 5px;
 }
 
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
 @media (max-width: 560px) {
   .contact li { grid-template-columns: 1fr; }
+  .contact__actions .btn { flex: 1 1 100%; }
 }
 
 /* ---------- Pie ---------- */

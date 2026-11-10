@@ -43,7 +43,7 @@
     "jobTitle": ["Ingeniero en Informática", "Desarrollador de sistemas web, SaaS y automatización con IA"],
     "description": "Ingeniero en Informática con más de 15 años construyendo sistemas en PHP y MySQL.",
     "url": "https://reinalddo.github.io/",
-    "image": "https://reinalddo.github.io/og-image.png",
+    "image": "https://reinalddo.github.io/img/foto.jpg",
     "email": "mailto:reinalddo@gmail.com",
     "address": { "@type": "PostalAddress", "addressLocality": "San Cristóbal", "addressCountry": "VE" },
     "alumniOf": "Universidad Nacional Experimental del Táchira (UNET)",
@@ -91,11 +91,10 @@
             <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.9 9.9 0 0 0 12.04 2Zm5.8 14.08c-.24.68-1.42 1.31-1.96 1.36-.5.05-1.13.21-3.8-.8-3.2-1.26-5.23-4.53-5.39-4.74-.16-.21-1.29-1.71-1.29-3.27s.82-2.32 1.11-2.64c.29-.32.63-.4.84-.4l.6.01c.19.01.45-.07.71.54.26.63.89 2.18.97 2.34.08.16.13.34.03.55-.11.21-.16.34-.32.53-.16.18-.33.41-.47.55-.16.16-.32.33-.14.65.19.32.83 1.37 1.78 2.22 1.22 1.09 2.25 1.42 2.57 1.58.32.16.5.13.69-.08.18-.21.79-.92 1-1.24.21-.32.42-.26.71-.16.29.11 1.84.87 2.16 1.03.32.16.53.24.6.37.08.14.08.77-.17 1.45Z"/></svg>
             Contactar por WhatsApp
           </a>
-          <!--
-            Botón de CV: descomentar cuando subas el archivo a la raíz del repositorio
-            con el nombre cv-reinaldo-matheus.pdf
-          <a class="btn btn--ghost" href="/cv-reinaldo-matheus.pdf" download>Descargar CV</a>
-          -->
+          <a class="btn btn--ghost" href="cv-reinaldo-matheus.pdf" download="cv-reinaldo-matheus.pdf">
+            <svg class="btn__icon btn__icon--line" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>
+            Descargar CV
+          </a>
         </div>
       </div>
 
@@ -105,7 +104,12 @@
           <span>2026</span>
         </div>
         <div class="ficha__head">
-          <span class="ficha__code" aria-hidden="true">RM</span>
+          <span class="ficha__photo">
+            <picture>
+              <source srcset="img/foto.webp" type="image/webp">
+              <img src="img/foto.jpg" alt="Foto de Reinaldo Matheus" width="480" height="480" fetchpriority="high">
+            </picture>
+          </span>
           <p class="ficha__title">Ingeniero en Informática<br><span>UNET · Táchira</span></p>
         </div>
         <dl class="ficha__rows">
@@ -180,7 +184,7 @@
         <dl class="project__facts project__facts--cols">
           <div><dt>Reto</dt><dd>Que los almacenes de los clientes controlaran todo el flujo físico de la mercancía desde la web, sincronizado con las terminales móviles de operación.</dd></div>
           <div><dt>Qué hice</dt><dd>Desarrollé la parte web de todo el flujo logístico: entrada y recepción, ubicación y acomodo, traslados, pedidos, embarques, salidas y envíos. Trabajé en coordinación con el desarrollador Android para que web y terminales operaran sobre los mismos datos.</dd></div>
-          <div><dt>Resultado</dt><dd>Sistema en producción usado por varios clientes de la empresa durante 7 años.</dd></div>
+          <div><dt>Resultado</dt><dd>Sistema en producción usado por varios clientes de la empresa durante casi 6 años.</dd></div>
         </dl>
 
         <!-- Capturas de AssistPro: guárdalas en img/assistpro/ y agrega una línea por imagen dentro del div, por ejemplo:
@@ -485,6 +489,12 @@
             <a class="contact__value" href="https://linkedin.com/in/ing-reinaldo-matheus" target="_blank" rel="noopener">linkedin.com/in/ing-reinaldo-matheus</a>
           </li>
         </ul>
+        <div class="contact__actions" data-reveal>
+          <a class="btn btn--primary" href="cv-reinaldo-matheus.pdf" download="cv-reinaldo-matheus.pdf">
+            <svg class="btn__icon btn__icon--line" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>
+            Descargar CV
+          </a>
+        </div>
       </div>
     </section>
   </main>

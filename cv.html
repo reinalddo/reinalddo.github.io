@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV · Reinaldo Matheus · Ingeniero en Informática</title>
+  <meta name="description" content="Currículum de Reinaldo Matheus, Ingeniero en Informática. Desarrollador de sistemas web, SaaS y automatización con IA. Más de 15 años con PHP y MySQL.">
+  <meta name="author" content="Reinaldo Matheus">
+  <link rel="canonical" href="https://reinalddo.github.io/cv.html">
+  <meta name="color-scheme" content="light">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://reinalddo.github.io/cv.html">
+  <meta property="og:title" content="CV · Reinaldo Matheus · Ingeniero en Informática">
+  <meta property="og:description" content="Desarrollador de sistemas web, SaaS y automatización con IA. Más de 15 años con PHP y MySQL.">
+  <meta property="og:image" content="https://reinalddo.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+
+  <style>
+    /* ---------- Tokens (mismos del sitio, ajustados para impresión) ---------- */
+    :root {
+      --ink: #16202B;
+      --ink-2: #364250;
+      --ink-3: #5B6672;
+      --line: #D3D9E0;
+      --signal: #E8A317;
+      --signal-ink: #8F5300;
+      --paper: #E9EDF1;
+      --font: "Archivo", "Segoe UI", Arial, sans-serif;
+      --mono: "JetBrains Mono", Consolas, monospace;
+      color-scheme: light;
+    }
+
+    @page { size: A4; margin: 12mm 14mm; }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 9.6pt;
+      line-height: 1.35;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    h1, h2, h3, p, ul, dl, dd { margin: 0; }
+    ul { padding: 0; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ---------- Hoja ---------- */
+    .hoja {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 24px auto 40px;
+      padding: 12mm 14mm;
+      background: #fff;
+      box-shadow: 0 1px 2px rgba(22, 32, 43, .08), 0 18px 50px -20px rgba(22, 32, 43, .35);
+    }
+
+    /* ---------- Encabezado ---------- */
+    .cab {
+      display: grid;
+      grid-template-columns: 27mm minmax(0, 1fr);
+      gap: 6mm;
+      align-items: center;
+    }
+    .foto {
+      display: block;
+      width: 27mm;
+      height: 27mm;
+      overflow: hidden;
+      border-radius: 3.2mm;
+      border: 1.6pt solid var(--ink);
+      background: #E9EDF1;
+    }
+    /* encuadre de credencial: cabeza y hombros */
+    .foto img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.6);
+      transform-origin: 50% 20%;
+    }
+    .nombre {
+      font-size: 25pt;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .titulo {
+      margin-top: 2.2mm;
+      font-size: 11pt;
+      font-weight: 600;
+      line-height: 1.3;
+      text-wrap: balance;
+    }
+    .ubicacion {
+      margin-top: 1.4mm;
+      font-size: 9.2pt;
+      color: var(--ink-2);
+    }
+    .contacto {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1mm 0;
+      margin-top: 4.2mm;
+      padding: 2.2mm 0;
+      border-top: 1.6pt solid var(--ink);
+      border-bottom: 1pt solid var(--line);
+      font-size: 8.3pt;
+    }
+    .contacto li { white-space: nowrap; }
+    .contacto li + li::before {
+      content: "·";
+      margin: 0 1.7mm;
+      color: var(--signal-ink);
+      font-weight: 700;
+    }
+    .contacto .corte { flex-basis: 100%; height: 0; }
+    .contacto .corte::before, .contacto .corte + li::before { content: none; }
+    .contacto a { border-bottom: 1pt solid transparent; }
+    .contacto strong { font-weight: 600; }
+
+    /* ---------- Secciones ---------- */
+    .sec { margin-top: 3.6mm; }
+    .sec__t {
+      display: flex;
+      align-items: center;
+      gap: 2.4mm;
+      margin-bottom: 2.2mm;
+      font-size: 10.4pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+    .sec__t::before {
+      content: "";
+      flex: none;
+      width: 3.2mm;
+      height: 1.6mm;
+      background: var(--signal);
+      border-radius: .3mm;
+    }
+    .sec__t::after {
+      content: "";
+      flex: 1;
+      height: 1pt;
+      background: var(--line);
+    }
+
+    .perfil { color: var(--ink); text-wrap: pretty; }
+
+    /* Experiencia */
+    .puesto + .puesto { margin-top: 2.8mm; }
+    .puesto__cab {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 4mm;
+      margin-bottom: 1.2mm;
+    }
+    .puesto__rol { font-size: 10.6pt; font-weight: 700; line-height: 1.25; }
+    .puesto__rol span { font-weight: 500; color: var(--ink-2); }
+    .puesto__fecha {
+      flex: none;
+      font-family: var(--mono);
+      font-size: 8.4pt;
+      color: var(--signal-ink);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .puntos { list-style: none; }
+    .puntos li {
+      position: relative;
+      padding-left: 4mm;
+      text-wrap: pretty;
+    }
+    .puntos li + li { margin-top: .4mm; }
+    .puntos li::before {
+      content: "";
+      position: absolute;
+      left: .6mm;
+      top: .58em;
+      width: 1.5mm;
+      height: 1.5mm;
+      background: var(--signal);
+      border-radius: .2mm;
+    }
+
+    /* Habilidades */
+    .habilidades > div {
+      display: grid;
+      grid-template-columns: 34mm minmax(0, 1fr);
+      gap: 3mm;
+      padding: .75mm 0;
+      border-bottom: .6pt dashed var(--line);
+    }
+    .habilidades > div:last-child { border-bottom: 0; }
+    .habilidades dt { font-weight: 700; }
+
+    /* Formación e idiomas */
+    .pie {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+      gap: 7mm;
+    }
+    .pie .sec { margin-top: 3.6mm; }
+    .grado { font-weight: 700; }
+    .grado span { font-weight: 500; color: var(--ink-2); }
+    .nota { margin-top: .8mm; color: var(--ink-2); }
+
+    /* ---------- Barra de pantalla (no se imprime) ---------- */
+    .barra {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 18px 16px 0;
+      font-size: 14px;
+    }
+    .barra a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 9px 16px;
+      border-radius: 9px;
+      border: 1px solid #C5CDD6;
+      background: #fff;
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .barra a.principal { background: var(--ink); border-color: var(--ink); color: #fff; }
+    .barra a:hover { border-color: var(--ink-3); }
+    .barra a:focus-visible { outline: 3px solid #B86E00; outline-offset: 2px; }
+    .barra svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ---------- Pantallas angostas ---------- */
+    @media screen and (max-width: 860px) {
+      body { font-size: 15px; background: #fff; }
+      .hoja { width: auto; min-height: 0; margin: 0; padding: 22px 18px 40px; box-shadow: none; }
+      .cab { grid-template-columns: 84px minmax(0, 1fr); gap: 16px; }
+      .foto { width: 84px; height: 84px; border-radius: 10px; }
+      .nombre { font-size: 30px; }
+      .titulo { font-size: 16px; }
+      .ubicacion { font-size: 14px; }
+      .contacto { font-size: 13.5px; flex-direction: column; gap: 4px; }
+      .contacto li + li::before { content: none; }
+      .contacto .corte { display: none; }
+      .contacto li { white-space: normal; overflow-wrap: anywhere; }
+      .sec { margin-top: 26px; }
+      .sec__t { font-size: 16px; }
+      .puesto + .puesto { margin-top: 18px; }
+      .puesto__cab { flex-direction: column; gap: 2px; }
+      .puesto__rol { font-size: 16px; }
+      .puesto__fecha { font-size: 13px; }
+      .puntos li { padding-left: 16px; }
+      .puntos li::before { width: 6px; height: 6px; left: 2px; }
+      .habilidades > div { grid-template-columns: 1fr; gap: 2px; padding: 8px 0; }
+      .pie { grid-template-columns: 1fr; gap: 0; }
+    }
+
+    /* ---------- Impresión ---------- */
+    @media print {
+      body { background: #fff; }
+      .barra { display: none; }
+      .hoja { width: auto; min-height: 0; margin: 0; padding: 0; box-shadow: none; }
+      .contacto a { border: 0; }
+      .sec, .puesto { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="barra" aria-label="Acciones del CV">
+    <a class="principal" href="cv-reinaldo-matheus.pdf" download>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>
+      Descargar PDF
+    </a>
+    <a href="./">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      Volver al portafolio
+    </a>
+  </nav>
+
+  <main class="hoja">
+    <header class="cab">
+      <span class="foto"><img src="img/foto.jpg" alt="Foto de Reinaldo Matheus" width="300" height="300"></span>
+      <div>
+        <h1 class="nombre">Reinaldo Matheus</h1>
+        <p class="titulo">Ingeniero en Informática · Desarrollador de sistemas web, SaaS y automatización con IA</p>
+        <p class="ubicacion">San Cristóbal, Táchira, Venezuela · Disponible para empleo remoto o presencial en San Cristóbal</p>
+      </div>
+    </header>
+
+    <ul class="contacto">
+      <li><a href="https://wa.me/584140779258">WhatsApp <strong>+58 414-0779258</strong></a></li>
+      <li><a href="mailto:reinalddo@gmail.com">reinalddo@gmail.com</a></li>
+      <li><a href="https://reinalddo.github.io">reinalddo.github.io</a></li>
+      <li class="corte" aria-hidden="true"></li>
+      <li><a href="https://linkedin.com/in/ing-reinaldo-matheus">linkedin.com/in/ing-reinaldo-matheus</a></li>
+      <li><a href="https://github.com/reinalddo">github.com/reinalddo</a></li>
+    </ul>
+
+    <section class="sec">
+      <h2 class="sec__t">Perfil</h2>
+      <p class="perfil">Ingeniero en Informática con más de 15 años desarrollando sistemas web en PHP y MySQL. Durante casi 6 años formé parte del equipo de AssistPro WMS (Adventech Logística, México), a cargo de la operación web del flujo logístico completo. Hoy construyo plataformas SaaS multi-tenant, integraciones con APIs y automatizaciones con n8n e inteligencia artificial, usando Claude Code a diario para entregar más rápido sin sacrificar calidad.</p>
+    </section>
+
+    <section class="sec">
+      <h2 class="sec__t">Experiencia</h2>
+
+      <article class="puesto">
+        <div class="puesto__cab">
+          <h3 class="puesto__rol">Desarrollador Independiente <span>— Remoto</span></h3>
+          <p class="puesto__fecha">Sep 2025 – Actualidad</p>
+        </div>
+        <ul class="puntos">
+          <li>Desarrollo y mantengo tiendas de recarga de videojuegos en producción: integración con API de recargas automáticas, verificación del pago por API antes de cada recarga, panel de pedidos y sistema de cupones para influencers con comisión por venta.</li>
+          <li>Creé CobroAlDía (SaaS de recordatorios de pago por WhatsApp) y TVirtualShop (e-commerce multi-tenant con base de datos independiente por cliente).</li>
+          <li>Automatizaciones con n8n e IA: pipeline de prospección que audita sitios web con IA y genera mensajes personalizados; recepcionista virtual para consultorio médico.</li>
+          <li>Apps Android y aplicaciones de escritorio para Windows a medida.</li>
+        </ul>
+      </article>
+
+      <article class="puesto">
+        <div class="puesto__cab">
+          <h3 class="puesto__rol">Desarrollador Web PHP <span>— Adventech Logística (México), remoto</span></h3>
+          <p class="puesto__fecha">Nov 2019 – Sep 2025</p>
+        </div>
+        <ul class="puntos">
+          <li>Desarrollé la parte web de AssistPro WMS: entrada y recepción, ubicación y acomodo, traslados, pedidos, embarques, salidas y envíos.</li>
+          <li>Backend en PHP con Slim Framework y MySQL, coordinado con el desarrollador Android para que la web y las terminales móviles operaran sobre los mismos datos.</li>
+          <li>Sistema en producción para varios clientes de la empresa.</li>
+        </ul>
+      </article>
+
+      <article class="puesto">
+        <div class="puesto__cab">
+          <h3 class="puesto__rol">Desarrollador Web Freelance <span>— Workana y clientes directos</span></h3>
+          <p class="puesto__fecha">2010 – 2019</p>
+        </div>
+        <ul class="puntos">
+          <li>74 proyectos completados en Workana con calificación de 4.87/5 en 86 reseñas y 0 incumplimientos.</li>
+          <li>11 clientes me contrataron en más de una ocasión.</li>
+          <li>Desarrollo y mantenimiento de sistemas web, bases de datos, tiendas online y sitios corporativos en PHP, MySQL, HTML, CSS, jQuery y WordPress.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="sec">
+      <h2 class="sec__t">Habilidades</h2>
+      <dl class="habilidades">
+        <div><dt>Backend</dt><dd>PHP, Slim Framework, APIs REST, integraciones con APIs de terceros</dd></div>
+        <div><dt>Datos</dt><dd>MySQL, diseño de bases de datos, PostgreSQL</dd></div>
+        <div><dt>Automatización e IA</dt><dd>n8n, OpenAI/OpenRouter, WhatsApp (Evolution API), Claude Code</dd></div>
+        <div><dt>Infraestructura</dt><dd>VPS Linux, Docker, Easypanel, Git</dd></div>
+        <div><dt>Frontend</dt><dd>HTML, CSS, JavaScript, jQuery, WordPress</dd></div>
+        <div><dt>Otros</dt><dd>Android (asistido por IA), aplicaciones de escritorio Windows</dd></div>
+      </dl>
+    </section>
+
+    <div class="pie">
+      <section class="sec">
+        <h2 class="sec__t">Formación</h2>
+        <p class="grado">Ingeniero en Informática <span>— Universidad Nacional Experimental del Táchira (UNET), 2010</span></p>
+        <p class="nota">Formación continua online: maquetación web, desarrollo asistido por IA y SEO.</p>
+      </section>
+      <section class="sec">
+        <h2 class="sec__t">Idiomas</h2>
+        <p>Español nativo · Inglés: lectura técnica básica</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
