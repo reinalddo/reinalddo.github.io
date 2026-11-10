@@ -50,6 +50,10 @@
       line-height: 1.35;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
+      /* Para los ATS: sin kerning ni ligaduras, cada letra y cada espacio quedan como caracteres separados */
+      font-kerning: none;
+      font-variant-ligatures: none;
+      font-feature-settings: "kern" 0, "liga" 0, "clig" 0;
     }
     h1, h2, h3, p, ul, dl, dd { margin: 0; }
     ul { padding: 0; }
@@ -67,13 +71,14 @@
 
     /* ---------- Encabezado ---------- */
     .cab {
-      display: grid;
-      grid-template-columns: 27mm minmax(0, 1fr);
+      display: flex;
       gap: 6mm;
       align-items: center;
     }
+    .cab__texto { flex: 1; min-width: 0; }
     .foto {
       display: block;
+      flex: none;
       width: 27mm;
       height: 27mm;
       overflow: hidden;
@@ -94,7 +99,6 @@
       font-size: 25pt;
       font-weight: 800;
       line-height: 1;
-      letter-spacing: -0.02em;
     }
     .titulo {
       margin-top: 2.2mm;
@@ -181,39 +185,41 @@
     }
     .puntos { list-style: none; }
     .puntos li {
-      position: relative;
       padding-left: 4mm;
       text-wrap: pretty;
     }
     .puntos li + li { margin-top: .4mm; }
+    /* viñeta en la misma línea del texto (sin posicionamiento, no altera el orden del PDF) */
     .puntos li::before {
       content: "";
-      position: absolute;
-      left: .6mm;
-      top: .58em;
+      display: inline-block;
       width: 1.5mm;
       height: 1.5mm;
+      margin-left: -3.4mm;
+      margin-right: 1.9mm;
+      vertical-align: .12em;
       background: var(--signal);
       border-radius: .2mm;
     }
 
     /* Habilidades */
     .habilidades > div {
-      display: grid;
-      grid-template-columns: 34mm minmax(0, 1fr);
+      display: flex;
       gap: 3mm;
       padding: .75mm 0;
       border-bottom: .6pt dashed var(--line);
     }
     .habilidades > div:last-child { border-bottom: 0; }
-    .habilidades dt { font-weight: 700; }
+    .habilidades dt { flex: 0 0 34mm; font-weight: 700; }
+    .habilidades dd { flex: 1; min-width: 0; }
 
     /* Formación e idiomas */
     .pie {
-      display: grid;
-      grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+      display: flex;
       gap: 7mm;
     }
+    .pie > .sec:first-child { flex: 1.55 1 0; min-width: 0; }
+    .pie > .sec:last-child { flex: 1 1 0; min-width: 0; }
     .pie .sec { margin-top: 3.6mm; }
     .grado { font-weight: 700; }
     .grado span { font-weight: 500; color: var(--ink-2); }
@@ -249,7 +255,7 @@
     @media screen and (max-width: 860px) {
       body { font-size: 15px; background: #fff; }
       .hoja { width: auto; min-height: 0; margin: 0; padding: 22px 18px 40px; box-shadow: none; }
-      .cab { grid-template-columns: 84px minmax(0, 1fr); gap: 16px; }
+      .cab { gap: 16px; }
       .foto { width: 84px; height: 84px; border-radius: 10px; }
       .nombre { font-size: 30px; }
       .titulo { font-size: 16px; }
@@ -265,9 +271,10 @@
       .puesto__rol { font-size: 16px; }
       .puesto__fecha { font-size: 13px; }
       .puntos li { padding-left: 16px; }
-      .puntos li::before { width: 6px; height: 6px; left: 2px; }
-      .habilidades > div { grid-template-columns: 1fr; gap: 2px; padding: 8px 0; }
-      .pie { grid-template-columns: 1fr; gap: 0; }
+      .puntos li::before { width: 6px; height: 6px; margin-left: -14px; margin-right: 8px; }
+      .habilidades > div { flex-direction: column; gap: 2px; padding: 8px 0; }
+      .habilidades dt { flex-basis: auto; }
+      .pie { flex-direction: column; gap: 0; }
     }
 
     /* ---------- Impresión ---------- */
@@ -295,7 +302,7 @@
   <main class="hoja">
     <header class="cab">
       <span class="foto"><img src="img/foto.jpg" alt="Foto de Reinaldo Matheus" width="300" height="300"></span>
-      <div>
+      <div class="cab__texto">
         <h1 class="nombre">Reinaldo Matheus</h1>
         <p class="titulo">Ingeniero en Informática · Desarrollador de sistemas web, SaaS y automatización con IA</p>
         <p class="ubicacion">San Cristóbal, Táchira, Venezuela · Disponible para empleo remoto o presencial en San Cristóbal</p>
