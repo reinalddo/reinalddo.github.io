@@ -81,6 +81,23 @@
     Array.prototype.forEach.call(revealItems, function (el) { revealObserver.observe(el); });
   }
 
+  /* ---------- Video (carga ligera) ----------
+     Muestra la miniatura; el iframe de YouTube se crea solo al hacer clic. */
+  Array.prototype.forEach.call(document.querySelectorAll('.video__facade'), function (facade) {
+    facade.addEventListener('click', function (e) {
+      if (e.ctrlKey || e.metaKey || e.shiftKey) return; // permitir abrir en otra pestaña
+      e.preventDefault();
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + facade.dataset.videoId + '?autoplay=1&rel=0&playsinline=1';
+      iframe.title = facade.dataset.videoTitle || 'Video';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allowFullscreen = true;
+      facade.replaceWith(iframe);
+      iframe.focus();
+    });
+  });
+
   /* ---------- Galerías ----------
      Cada .gallery contiene enlaces .gallery__item con su <img>.
      Si una imagen no existe se quita; si no queda ninguna, se quita la galería

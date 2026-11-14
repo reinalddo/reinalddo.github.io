@@ -68,6 +68,7 @@
         <span class="nav__toggle-text">Menú</span>
       </button>
       <nav class="nav__menu" id="nav-menu" aria-label="Secciones">
+        <a href="#video">Video</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#como-trabajo">Cómo trabajo</a>
         <a href="#habilidades">Habilidades</a>
@@ -123,6 +124,30 @@
           <span class="ficha__url">reinalddo.github.io</span>
         </div>
       </aside>
+    </section>
+
+    <!-- ============ VIDEO ============ -->
+    <section class="section section--video wrap" id="video" aria-labelledby="t-video">
+      <header class="section__head" data-reveal>
+        <h2 id="t-video">Mira mis proyectos funcionando</h2>
+        <p>Un recorrido de 9 minutos por los sistemas que he desarrollado.</p>
+      </header>
+      <!-- Carga ligera: el iframe de YouTube se crea solo al hacer clic (script.js). Sin JS, el enlace abre YouTube. -->
+      <div class="video" data-reveal>
+        <a class="video__facade" href="https://www.youtube.com/watch?v=sUR8nR7HEMA" target="_blank" rel="noopener"
+           data-video-id="sUR8nR7HEMA"
+           data-video-title="Video: recorrido por los proyectos de Reinaldo Matheus"
+           aria-label="Reproducir el video: recorrido de 9 minutos por los proyectos de Reinaldo Matheus">
+          <picture>
+            <source srcset="img/miniatura-portafolio.webp" type="image/webp">
+            <img src="img/miniatura-portafolio.png" alt="Miniatura del video «Sistemas que funcionan»: Ing. Reinaldo Matheus, más de 15 años, con sus proyectos (sistema logístico WMS, SaaS de cobros, tiendas online, recargas automáticas, bots de WhatsApp con IA) y herramientas" width="1280" height="720" loading="lazy" decoding="async">
+          </picture>
+          <span class="video__play" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </span>
+          <span class="video__time" aria-hidden="true">9 min</span>
+        </a>
+      </div>
     </section>
 
     <!-- ============ PROYECTOS ============ -->

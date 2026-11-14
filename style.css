@@ -223,7 +223,9 @@ ul, ol { padding: 0; }
 .nav__toggle-bars::before { top: -5px; }
 .nav__toggle-bars::after { top: 5px; }
 
-@media (max-width: 760px) {
+.nav__menu a, .nav__name { white-space: nowrap; }
+
+@media (max-width: 900px) {
   .nav__toggle { display: inline-flex; }
   .nav__menu {
     display: none;
@@ -527,6 +529,78 @@ ul, ol { padding: 0; }
   border-radius: 1px;
 }
 .section__head p { margin-top: 14px; color: var(--ink-2); }
+
+/* ---------- Video ---------- */
+.section--video { padding-top: clamp(8px, 2vw, 24px); }
+.section--video .section__head {
+  max-width: 900px;
+  margin-inline: auto;
+  text-align: center;
+}
+.section--video .section__head h2::before { margin-inline: auto; }
+
+.video {
+  position: relative;
+  max-width: 900px;
+  margin-inline: auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  background: #0E1318;
+  box-shadow: 0 30px 60px -36px color-mix(in srgb, var(--ink) 55%, transparent);
+}
+.video__facade,
+.video iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video__facade { cursor: pointer; }
+.video__facade img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s var(--ease), filter .3s ease;
+}
+.video__facade:hover img { transform: scale(1.015); filter: brightness(.92); }
+.video__facade:focus-visible { outline: 0; }
+.video__facade:focus-visible .video__play { outline: 3px solid var(--signal); outline-offset: 4px; }
+
+.video__play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: clamp(64px, 11vw, 96px);
+  height: clamp(64px, 11vw, 96px);
+  border-radius: 50%;
+  background: var(--signal);
+  color: #16202B;
+  box-shadow: 0 0 0 8px rgba(232, 163, 23, .25), 0 14px 30px -10px rgba(0, 0, 0, .6);
+  transform: translate(-50%, -50%);
+  transition: transform .2s var(--ease), box-shadow .2s ease;
+}
+.video__play svg { width: 44%; height: 44%; margin-left: 8%; fill: currentColor; }
+.video__facade:hover .video__play {
+  transform: translate(-50%, -50%) scale(1.07);
+  box-shadow: 0 0 0 12px rgba(232, 163, 23, .3), 0 18px 36px -10px rgba(0, 0, 0, .65);
+}
+.video__time {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: rgba(14, 19, 24, .85);
+  color: #F4F6F8;
+  font-family: var(--mono);
+  font-size: .78rem;
+}
 
 /* Aparición al hacer scroll (solo si el JS está activo y se permite movimiento) */
 @media (prefers-reduced-motion: no-preference) {
